@@ -95,6 +95,7 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
+              href="/home"
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
