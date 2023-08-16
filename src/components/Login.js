@@ -41,21 +41,6 @@ export default function SignInSide() {
         >
           <Grid justifyContent="center" container>
             <CssBaseline />
-            {/* <Grid
-              item
-              xs={false}
-              sm={4}
-              md={5.8}
-              sx={{
-                backgroundImage:
-                  // "url(https://getwallpapers.com/wallpaper/full/9/c/7/993236-amazing-cool-snake-wallpapers-1920x1200-xiaomi.jpg)",
-                  `url(${Logo})`,
-                backgroundRepeat: "no-repeat",
-                backgroundColor: (t) => `rgba(0, 0, 0, 0.5)`,
-                // backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            /> */}
             <Grid
               item
               xs={12}
