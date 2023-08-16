@@ -39,13 +39,14 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <img
             src={LogoImage}
             alt="Logo"
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            width="60"
+            height="60"
+            style={{float : 'left', paddingRight : '15px'}}
             focusable="false"
             aria-hidden="true"
             viewBox="0 0 24 24"
@@ -65,7 +66,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            Snake-Tail Doc
+            Snake-Tail Doc Portal
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -165,7 +166,6 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
         </Toolbar>
-      </Container>
     </AppBar>
   );
 }
