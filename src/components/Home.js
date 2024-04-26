@@ -56,24 +56,34 @@ export default function CustomizedTables() {
           <TableHead>
             <TableRow>
               <StyledTableCell>ID</StyledTableCell>
-              <StyledTableCell align="left">Patient Name</StyledTableCell>
-              <StyledTableCell align="left">Snake Image URL</StyledTableCell>
+              <StyledTableCell align="left">Name</StyledTableCell>
+              <StyledTableCell align="left">Sickness</StyledTableCell>
+              <StyledTableCell align="left">Experiencing</StyledTableCell>
+              <StyledTableCell align="left">Breathing</StyledTableCell>
+              <StyledTableCell align="left">Bleeding</StyledTableCell>
+              <StyledTableCell align="left">Changes</StyledTableCell>
               <StyledTableCell align="left">Bitten Time</StyledTableCell>
-              <StyledTableCell align="left">Phone Number</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {patients.map((row,index) => (
-              <StyledTableRow key={row.id}>
-                <StyledTableCell component="th" scope="row">
-                  {index + 1}
-                </StyledTableCell>
-                <StyledTableCell align="left">{row.patient_name}</StyledTableCell>
-                <StyledTableCell align="left">{row.snake_image_url}</StyledTableCell>
-                <StyledTableCell align="left">{moment(row.bitten_time.seconds * 1000).format("DD MMM YYYY hh:mm a")}</StyledTableCell>
-                <StyledTableCell align="left">{row.phone_number}</StyledTableCell>
-              </StyledTableRow>
-            ))}
+            {patients
+              .sort((a, b) => b.bitten_time.seconds - a.bitten_time.seconds) // Sort by bitten time in descending order
+              .map((row, index) => (
+                <StyledTableRow key={row.id}>
+                  <StyledTableCell component="th" scope="row">
+                    {index + 1}
+                  </StyledTableCell>
+                  <StyledTableCell align="left">{row.name}</StyledTableCell>
+                  <StyledTableCell align="left">{row.sickness}</StyledTableCell>
+                  <StyledTableCell align="left">{row.experiencing}</StyledTableCell>
+                  <StyledTableCell align="left">{row.breathing}</StyledTableCell>
+                  <StyledTableCell align="left">{row.bleeding}</StyledTableCell>
+                  <StyledTableCell align="left">{row.changes}</StyledTableCell>
+                  <StyledTableCell align="left">
+                    {moment(row.bitten_time.seconds * 1000).format("DD MMM YYYY hh:mm a")}
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
